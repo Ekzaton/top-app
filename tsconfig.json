@@ -90,7 +90,8 @@
     ],
   },
   "include": [
-    "next-env.d.ts",
+    "next-env-custom.d.ts",
+    "img.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],

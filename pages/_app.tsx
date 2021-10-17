@@ -1,5 +1,4 @@
 import {AppProps} from "next/dist/shared/lib/router/router";
-
 import Head from "next/head";
 
 import "../styles/globals.css";

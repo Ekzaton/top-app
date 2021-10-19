@@ -8,18 +8,10 @@ export function Button(props: ButtonProps): JSX.Element {
   const {appearance, arrow = 'none', className, children, ...otherProps} = props;
 
   return (
-    <button className={cn(styles.button, className, {
-      [styles.primary]: appearance === "primary",
-      [styles.ghost]: appearance === "ghost"
-    })}
-    {...otherProps}
-    >
+    <button className={cn(styles.button, className, styles[appearance])} {...otherProps}>
       {children}
-      {arrow !== "none" && <span className={cn(styles.arrow, {
-        [styles.down]: arrow === "down",
-        [styles.right]: arrow === "right"
-      })}>
-        <ArrowIcon className={styles.down}/>
+      {arrow !== "none" && <span className={cn(styles.arrow, styles[arrow])}>
+        <ArrowIcon className={styles.right}/>
       </span>}
     </button>
   );

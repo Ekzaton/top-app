@@ -1,9 +1,9 @@
 import cn from "classnames";
 
-import styles from "./HTag.module.css";
-import {HTagProps} from "./HTag.props";
+import styles from "./Heading.module.css";
+import {HeadingProps} from "./Heading.props";
 
-export function HTag(props: HTagProps): JSX.Element {
+export function Heading(props: HeadingProps): JSX.Element {
   const {size, className, children, ...otherProps} = props;
 
   switch (size) {

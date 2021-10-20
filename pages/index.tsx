@@ -1,18 +1,18 @@
 import React from "react";
 
-import {Button, HTag, PTag} from "../components";
+import {Button, Heading, Paragraph} from "../components";
 
 export default function Home(): JSX.Element {
   return (
       <>
-        <HTag size="h3">Маленький заголовок</HTag>
-        <HTag size="h2">Средний заголовок</HTag>
-        <HTag size="h1">Большой заголовок</HTag>
+        <Heading size="h3">Маленький заголовок</Heading>
+        <Heading size="h2">Средний заголовок</Heading>
+        <Heading size="h1">Большой заголовок</Heading>
         <Button appearance="primary" arrow="right">Кнопка</Button>
         <Button appearance="ghost" arrow="right">Кнопка</Button>
-        <PTag size="s">Маленький</PTag>
-        <PTag>Средний</PTag>
-        <PTag size="l">Большой</PTag>
+        <Paragraph size="s">Маленький</Paragraph>
+        <Paragraph>Средний</Paragraph>
+        <Paragraph size="l">Большой</Paragraph>
       </>
   );
 }

@@ -1,4 +1,4 @@
 export * from "./Button/Button";
-export * from "./HTag/HTag";
-export * from "./PTag/PTag";
+export * from "./Heading/Heading";
+export * from "./Paragraph/Paragraph";
 

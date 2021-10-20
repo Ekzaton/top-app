@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Button, Heading, Paragraph} from "../components";
+import {Button, Heading, Paragraph, Tag} from "../components";
 
 export default function Home(): JSX.Element {
   return (
@@ -13,6 +13,10 @@ export default function Home(): JSX.Element {
         <Paragraph size="s">Маленький</Paragraph>
         <Paragraph>Средний</Paragraph>
         <Paragraph size="l">Большой</Paragraph>
+        <Tag size="s">Ghost</Tag>
+        <Tag size="m" color="red">Red</Tag>
+        <Tag size="s" color="green">Green</Tag>
+        <Tag color="primary">Primary</Tag>
       </>
   );
 }

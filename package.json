@@ -25,7 +25,7 @@
     "classnames": "2.3.1",
     "eslint": "8.0.1",
     "eslint-config-next": "11.1.2",
-    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-react-hooks": "4.2.1-alpha-c3a19e5af-20211014",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",
     "stylelint-order": "4.1.0",

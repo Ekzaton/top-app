@@ -11,14 +11,12 @@ function Layout(props: LayoutProps): JSX.Element {
   const {children} = props;
 
   return (
-    <>
-      <Header/>
-      <div>
-        <Sidebar/>
-        <div>{children}</div>
-      </div>
-      <Footer/>
-    </>
+    <div className={styles.wrapper}>
+      <Header className={styles.header}/>
+      <Sidebar className={styles.sidebar}/>
+      <div className={styles.body}>{children}</div>
+      <Footer className={styles.footer}/>
+    </div>
   );
 }
 

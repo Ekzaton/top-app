@@ -4,7 +4,7 @@ import React, {useState} from "react";
 
 import {Button, Heading, Paragraph, Rating, Tag} from "../components";
 import {withLayout} from "../layout/Layout";
-import {MenuItem} from "../inrerfaces/menu.interface";
+import {MenuItem} from "../interfaces/menu.interface";
 
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[],

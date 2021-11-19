@@ -1,30 +1,29 @@
 import axios from "axios";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 
-import {withLayout} from "../../layout/Layout";
+import {firstLevelMenu} from "../../helpers/helpers";
 import {MenuItem} from "../../interfaces/menu.interface";
 import {LevelCategory, PageModel} from "../../interfaces/page.interface";
 import {ProductModel} from "../../interfaces/product.interface";
-import {firstLevelMenu} from "../../helpers/helpers";
+import {withLayout} from "../../layout/Layout";
+import {TopPageComponent} from "../../page-components";
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[],
   firstCategory: LevelCategory,
   page: PageModel,
   products: ProductModel[]
 }
 
-function Course(props: CourseProps): JSX.Element {
-  const {products} = props;
+function TopPage(props: TopPageProps): JSX.Element {
+  const {firstCategory, page, products} = props;
 
   return (
-      <>
-        {products && products.length}
-      </>
+    <TopPageComponent firstCategory={firstCategory} page={page} products={products}/>
   );
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = [];
@@ -42,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: GetStaticPropsContext) => {
   if (!params) {
     return {
       notFound: true

@@ -1,4 +1,4 @@
-import {LevelCategory} from "./page.interface";
+import {TopLevelCategory} from "./page.interface";
 
 export interface PageItem {
   alias: string;
@@ -19,5 +19,5 @@ export interface FirstLevelMenuItem {
   route: string;
   name: string;
   icon: JSX.Element;
-  id: LevelCategory
+  id: TopLevelCategory
 }

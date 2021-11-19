@@ -3,14 +3,14 @@ import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 
 import {firstLevelMenu} from "../../helpers/helpers";
 import {MenuItem} from "../../interfaces/menu.interface";
-import {LevelCategory, PageModel} from "../../interfaces/page.interface";
+import {TopLevelCategory, PageModel} from "../../interfaces/page.interface";
 import {ProductModel} from "../../interfaces/product.interface";
 import {withLayout} from "../../layout/Layout";
 import {TopPageComponent} from "../../page-components";
 
 interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[],
-  firstCategory: LevelCategory,
+  firstCategory: TopLevelCategory,
   page: PageModel,
   products: ProductModel[]
 }

@@ -1,8 +1,8 @@
-import {LevelCategory, PageModel} from "../../interfaces/page.interface";
+import {TopLevelCategory, PageModel} from "../../interfaces/page.interface";
 import {ProductModel} from "../../interfaces/product.interface";
 
 export interface TopPageComponentsProps {
-  firstCategory: LevelCategory,
+  firstCategory: TopLevelCategory,
   page: PageModel,
   products: ProductModel[]
 }

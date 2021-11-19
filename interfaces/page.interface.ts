@@ -1,11 +1,11 @@
-export enum LevelCategory {
+export enum TopLevelCategory {
   Courses,
   Services,
   Books,
   Products
 }
 
-export interface PageAdvantage {
+export interface TopPageAdvantage{
   _id: string;
   title: string;
   description: string;
@@ -31,8 +31,8 @@ export interface PageModel {
   tagsTitle: string;
   metaTitle: string;
   metaDescription: string;
-  firstCategory: LevelCategory;
-  advantages: PageAdvantage[];
+  firstCategory: TopLevelCategory;
+  advantages: TopPageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
   hh: HhData;

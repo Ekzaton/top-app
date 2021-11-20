@@ -1,4 +1,4 @@
-import {Advantages, Heading, HHData, Paragraph, Tag} from "../../components";
+import {Advantages, Heading, HHData, Tag} from "../../components";
 
 import styles from "./TopPagecComponent.module.css";
 import {TopPageComponentsProps} from "./TopPageComponent.props";
@@ -26,7 +26,7 @@ export function TopPageComponent(props: TopPageComponentsProps): JSX.Element {
         <Heading size="h2">Преимущества</Heading>
         <Advantages advantages={page.advantages}/>
       </>}
-      {page.seoText && <Paragraph>{page.seoText}</Paragraph>}
+      {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{__html: page.seoText}}/>}
       <Heading size="h2">Получаемые навыки</Heading>
       {page.tags.map(t => <Tag key={t} color="primary">{t}</Tag>)}
     </div>

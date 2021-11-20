@@ -1,0 +1,35 @@
+.sorting {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
+}
+
+.sorting span {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+
+	align-items: center;
+	gap: 8px;
+
+	cursor: pointer;
+}
+
+.sorting span:not(.active) {
+	grid-template-columns: 1fr;
+}
+
+.active {
+	color: var(--primary);
+
+	font-weight: 700;
+}
+
+.icon {
+	display: none;
+}
+
+.active .icon {
+	display: block;
+
+	margin-right: 8px;
+}

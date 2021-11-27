@@ -21,7 +21,7 @@
 }
 
 .salary > div {
-	border-right: 1px solid var(--grey-light);
+	border-right: 1px solid var(--gray-light);
 }
 
 .salary > div:last-child {
@@ -80,7 +80,7 @@
 		padding-bottom: 20px;
 
 		border-right: none;
-		border-bottom: 1px solid var(--grey-light);
+		border-bottom: 1px solid var(--gray-light);
 	}
 
 	.salary > div:last-child {

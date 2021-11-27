@@ -1,20 +1,19 @@
-import {Advantages, Heading, HHData, Sorting, Tag} from "../../components";
+import {useReducer} from "react";
 
+import {Advantages, Heading, HHData, Sorting, Tag} from "../../components";
+import {SortingEnum} from "../../components/Sorting/Sorting.props";
+import {TopLevelCategory} from "../../interfaces/page.interface";
+
+import {sortingReducer} from "./sorting.reducer";
 import styles from "./TopPagecComponent.module.css";
 import {TopPageComponentsProps} from "./TopPageComponent.props";
-import {TopLevelCategory} from "../../interfaces/page.interface";
-import {SortingEnum} from "../../components/Sorting/Sorting.props";
-import {useReducer} from "react";
-import {sortingReducer} from "./sorting.reducer";
 
 export function TopPageComponent(props: TopPageComponentsProps): JSX.Element {
   const {firstCategory, page, products} = props;
   const [{products: sortedProducts, sorting }, dispatchSorting] =
       useReducer(sortingReducer, {products, sorting: SortingEnum.Rating});
 
-  const setSorting = (sorting: SortingEnum) => {
-    dispatchSorting({type: sorting});
-  };
+  const setSorting = (sorting: SortingEnum) => dispatchSorting({type: sorting});
 
   return (
     <div className={styles.wrapper}>

@@ -2,7 +2,7 @@ import axios from "axios";
 import {GetStaticProps} from "next";
 import React, {useState} from "react";
 
-import {Button, Heading, Input, Paragraph, Rating, Tag} from "../components";
+import {Button, Heading, Input, Paragraph, Rating, Tag, Textarea} from "../components";
 import {withLayout} from "../layout/Layout";
 import {MenuItem} from "../interfaces/menu.interface";
 
@@ -30,6 +30,7 @@ function Home(): JSX.Element {
       <Tag color="primary">Primary</Tag>
       <Rating rating={rating} setRating={setRating} isEditable />
       <Input placeholder="текст"/>
+      <Textarea placeholder="текст"/>
     </>
   );
 }

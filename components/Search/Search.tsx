@@ -1,6 +1,6 @@
 import cn from "classnames";
 import {useRouter} from "next/router";
-import {useState} from "react";
+import {KeyboardEvent, useState} from "react";
 
 import {Button, Input} from "../../components";
 
@@ -28,7 +28,6 @@ export function Search(props: SearchProps): JSX.Element {
       }
     });
   };
-
 
   return (
     <div className={cn(className, styles.search)} {...otherProps}>

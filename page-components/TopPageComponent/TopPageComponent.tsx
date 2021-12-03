@@ -1,6 +1,6 @@
 import {useReducer} from "react";
 
-import {Advantages, Heading, HHData, Sorting, Tag} from "../../components";
+import {Advantages, Heading, HHData, Product, Sorting, Tag} from "../../components";
 import {SortingEnum} from "../../components/Sorting/Sorting.props";
 import {TopLevelCategory} from "../../interfaces/page.interface";
 
@@ -23,7 +23,7 @@ export function TopPageComponent(props: TopPageComponentsProps): JSX.Element {
         <Sorting sorting={sorting} setSorting={setSorting}/>
       </div>
       <div>
-        {sortedProducts && sortedProducts.map(p => <div key={p._id}>{p.title}</div>)}
+        {sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p}/>)}
       </div>
       <div className={styles.hhTitle}>
         <Heading size="h2">Вакансии - {page.category}</Heading>

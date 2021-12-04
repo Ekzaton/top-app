@@ -5,7 +5,7 @@ import {SortingEnum} from "../../components/Sorting/Sorting.props";
 import {TopLevelCategory} from "../../interfaces/page.interface";
 
 import {sortingReducer} from "./sorting.reducer";
-import styles from "./TopPagecComponent.module.css";
+import styles from "./TopPageComponent.module.css";
 import {TopPageComponentsProps} from "./TopPageComponent.props";
 
 export function TopPageComponent(props: TopPageComponentsProps): JSX.Element {

@@ -16,7 +16,7 @@ export function Product(props: ProductProps): JSX.Element {
   return (
     <Card className={cn(styles.product, className)}>
       <div className={styles.logo}>
-        <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title}/>
+        <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} width="70" height="70" alt={product.title}/>
       </div>
       <div className={styles.title}>{product.title}</div>
       <div className={styles.price}>
@@ -44,7 +44,15 @@ export function Product(props: ProductProps): JSX.Element {
       </div>
       <Divider className={styles.hr}/>
       <div className={styles.description}>{product.description}</div>
-      <div className={styles.features}>фичи</div>
+      <div className={styles.features}>
+        {product.characteristics.map(c =>
+          <div key={c.name} className={styles.characteristic}>
+            <span className={styles.characteristicName}>{c.name}</span>
+            <span className={styles.characteristicDots}/>
+            <span className={styles.characteristicValue}>{c.value}</span>
+          </div>
+        )}
+      </div>
       <div className={styles.advBlock}>
         {product.advantages && <div className={styles.advantages}>
           <div className={styles.advTitle}>Преимущества</div>

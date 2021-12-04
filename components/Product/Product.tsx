@@ -8,7 +8,7 @@ import {Tag} from "../Tag/Tag";
 
 import styles from "./Product.module.css";
 import {ProductProps} from "./Product.props";
-import {priceRu} from "../../helpers/helpers";
+import {priceRu, declOfNum} from "../../helpers/helpers";
 
 export function Product(props: ProductProps): JSX.Element {
   const { className, product } = props;
@@ -21,7 +21,9 @@ export function Product(props: ProductProps): JSX.Element {
       <div className={styles.title}>{product.title}</div>
       <div className={styles.price}>
         {priceRu(product.price)}
-        {product.oldPrice && <Tag className={styles.oldPrice} color="green">{priceRu(product.price - product.oldPrice)}</Tag>}
+        {product.oldPrice && <Tag className={styles.oldPrice} color="green">
+          {priceRu(product.price - product.oldPrice)}
+        </Tag>}
       </div>
       <div className={styles.credit}>
         {priceRu(product.credit)}
@@ -35,7 +37,11 @@ export function Product(props: ProductProps): JSX.Element {
       </div>
       <div className={styles.priceTitle}>цена</div>
       <div className={styles.creditTitle}>в кредит</div>
-      <div className={styles.ratingTitle}>{product.reviewCount} отзывов</div>
+      <div className={styles.ratingTitle}>
+        {product.reviewCount}
+        {' '}
+        {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+      </div>
       <Divider className={styles.hr}/>
       <div className={styles.description}>{product.description}</div>
       <div className={styles.features}>фичи</div>

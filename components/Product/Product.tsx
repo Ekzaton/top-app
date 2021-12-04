@@ -1,4 +1,5 @@
 import cn from "classnames";
+import Image from "next/image";
 
 import {Button} from "../Button/Button";
 import {Card} from "../Card/Card";
@@ -16,7 +17,7 @@ export function Product(props: ProductProps): JSX.Element {
   return (
     <Card className={cn(styles.product, className)}>
       <div className={styles.logo}>
-        <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} width="70" height="70" alt={product.title}/>
+        <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} width="70" height="70" alt={product.title}/>
       </div>
       <div className={styles.title}>{product.title}</div>
       <div className={styles.price}>

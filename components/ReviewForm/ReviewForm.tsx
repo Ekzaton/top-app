@@ -13,7 +13,7 @@ import {Textarea} from "../Textarea/Textarea";
 
 export function ReviewForm(props: ReviewFormProps): JSX.Element {
   const {productId, className, ...otherProps} = props;
-  const {register, control, handleSubmit} = useForm<IReviewForm>();
+  const {register, control, handleSubmit, formState: {errors}} = useForm<IReviewForm>();
 
   const onSubmit = (data: IReviewForm) => {
     console.log(data);
@@ -22,8 +22,17 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(styles.reviewForm, className)} {...otherProps}>
-        <Input placeholder="Имя" {...register("name")}/>
-        <Input className={styles.title} placeholder="Заголовок отзыва" {...register("title")}/>
+        <Input
+            placeholder="Имя"
+            error={errors.name}
+            {...register("name", {required: {value: true, message: "Заполните имя"}})}
+        />
+        <Input
+            className={styles.title}
+            placeholder="Заголовок отзыва"
+            error={errors.title}
+            {...register("title", {required: {value: true, message: "Заполните заголовок"}})}
+        />
         <div className={styles.rating}>
           <span>Оценка:</span>
           <Controller
@@ -34,7 +43,12 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
             }
           />
         </div>
-        <Textarea className={styles.description} placeholder="Текст отзыва" {...register("description")}/>
+        <Textarea
+          className={styles.description}
+          placeholder="Текст отзыва"
+          error={errors.description}
+          {...register("description", {required: {value: true, message: "Заполните текст отзыва"}})}
+        />
         <div className={styles.submit}>
           <Button appearance="primary">Отправить</Button>
           <span>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>

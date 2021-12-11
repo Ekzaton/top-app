@@ -24,10 +24,6 @@
 	grid-column: start / end;
 }
 
-.description {
-	resize: none;
-}
-
 .submit {
 	display: grid;
 	grid-template-columns: 148px 1fr;

@@ -38,8 +38,14 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
           <Controller
             control={control}
             name="rating"
+            rules={{required: {value: true, message: "Укажите рейтинг"}}}
             render={({field}) =>
-              <Rating ref={field.ref} rating={field.value} setRating={field.onChange} isEditable/>
+              <Rating
+                ref={field.ref}
+                rating={field.value}
+                setRating={field.onChange}
+                isEditable
+                error={errors.rating}/>
             }
           />
         </div>

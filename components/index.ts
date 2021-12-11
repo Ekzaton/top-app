@@ -9,6 +9,7 @@ export * from "./Paragraph/Paragraph";
 export * from "./Product/Product";
 export * from "./Rating/Rating";
 export * from "./Review/Review";
+export * from "./ReviewForm/ReviewForm";
 export * from "./Search/Search";
 export * from "./Sorting/Sorting";
 export * from "./Tag/Tag";

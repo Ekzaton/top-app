@@ -7,6 +7,7 @@ import {Card} from "../Card/Card";
 import {Divider} from "../Divider/Divider";
 import {Rating} from "../Rating/Rating";
 import {Review} from "../Review/Review";
+import {ReviewForm} from "../ReviewForm/ReviewForm";
 import {Tag} from "../Tag/Tag";
 
 import styles from "./Product.module.css";
@@ -86,7 +87,13 @@ export function Product(props: ProductProps): JSX.Element {
         className={cn(styles.reviews, {[styles.opened]: isReviewOpened}, {[styles.closed]: !isReviewOpened})}
         color="blue"
       >
-        {product.reviews.map(r => <Review key={r._id} review={r}/>)}
+        {product.reviews.map(r => (
+          <>
+            <Review key={r._id} review={r}/>
+            <Divider/>
+          </>
+        ))}
+        <ReviewForm productId={product._id}/>
       </Card>
     </>
   );

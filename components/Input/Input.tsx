@@ -1,10 +1,11 @@
 import cn from "classnames";
+import {ForwardedRef, forwardRef} from "react";
 
 import styles from "./Input.module.css";
 import {InputProps} from "./Input.props";
 
-export function Input(props: InputProps): JSX.Element {
+export const Input = forwardRef((props: InputProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
   const {className, ...otherProps} = props;
 
-  return <input className={cn(className, styles.input)} {...otherProps}/>;
-}
+  return <input ref={ref} className={cn(className, styles.input)} {...otherProps}/>;
+});

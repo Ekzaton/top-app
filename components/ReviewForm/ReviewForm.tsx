@@ -29,7 +29,9 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
           <Controller
             control={control}
             name="rating"
-            render={({field}) => <Rating rating={field.value} setRating={field.onChange} isEditable/>}
+            render={({field}) =>
+              <Rating ref={field.ref} rating={field.value} setRating={field.onChange} isEditable/>
+            }
           />
         </div>
         <Textarea className={styles.description} placeholder="Текст отзыва" {...register("description")}/>

@@ -2,6 +2,8 @@ import cn from "classnames";
 import Image from "next/image";
 import {useState} from "react";
 
+import {priceRu, declOfNum} from "../../helpers/helpers";
+
 import {Button} from "../Button/Button";
 import {Card} from "../Card/Card";
 import {Divider} from "../Divider/Divider";
@@ -12,7 +14,6 @@ import {Tag} from "../Tag/Tag";
 
 import styles from "./Product.module.css";
 import {ProductProps} from "./Product.props";
-import {priceRu, declOfNum} from "../../helpers/helpers";
 
 export function Product(props: ProductProps): JSX.Element {
   const { className, product } = props;

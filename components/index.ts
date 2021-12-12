@@ -14,4 +14,5 @@ export * from "./Search/Search";
 export * from "./Sorting/Sorting";
 export * from "./Tag/Tag";
 export * from "./Textarea/Textarea";
+export * from "./Up/Up";
 

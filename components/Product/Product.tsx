@@ -1,6 +1,6 @@
 import cn from "classnames";
 import Image from "next/image";
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 import {priceRu, declOfNum} from "../../helpers/helpers";
 
@@ -16,13 +16,23 @@ import styles from "./Product.module.css";
 import {ProductProps} from "./Product.props";
 
 export function Product(props: ProductProps): JSX.Element {
-  const { className, product } = props;
+  const { className, product, ...otherProps} = props;
+
+  const reviewRef = useRef<HTMLDivElement>(null);
 
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  };
+
   return (
-    <>
-      <Card className={cn(styles.product, className)}>
+    <div className={className} {...otherProps}>
+      <Card className={styles.product}>
         <div className={styles.logo}>
           <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} width="70" height="70" alt={product.title}/>
         </div>
@@ -46,9 +56,14 @@ export function Product(props: ProductProps): JSX.Element {
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>в кредит</div>
         <div className={styles.ratingTitle}>
-          {product.reviewCount}
-          {' '}
-          {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          <a
+            href="#ref"
+            onClick={scrollToReview}
+          >
+            {product.reviewCount}
+            {' '}
+            {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          </a>
         </div>
         <Divider className={styles.hr}/>
         <div className={styles.description}>{product.description}</div>
@@ -85,6 +100,7 @@ export function Product(props: ProductProps): JSX.Element {
         </div>
       </Card>
       <Card
+        ref={reviewRef}
         className={cn(styles.reviews, {[styles.opened]: isReviewOpened}, {[styles.closed]: !isReviewOpened})}
         color="blue"
       >
@@ -96,6 +112,6 @@ export function Product(props: ProductProps): JSX.Element {
         ))}
         <ReviewForm productId={product._id}/>
       </Card>
-    </>
+    </div>
   );
 }

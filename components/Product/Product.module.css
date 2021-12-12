@@ -99,6 +99,10 @@
 	line-height: 19px;
 }
 
+.ratingTitle a {
+	color: var(--primary);
+}
+
 .description {
 	margin-bottom: 15px;
 

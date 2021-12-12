@@ -1,10 +1,11 @@
 import cn from "classnames";
+import { motion } from "framer-motion";
 import {ForwardedRef, forwardRef} from "react";
 
 import styles from "./Card.module.css";
 import {CardProps} from "./Card.props";
 
-export const Card = forwardRef((props: CardProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+export const Card = motion(forwardRef((props: CardProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
   const {color = "white", children, className, ...otherProps} = props;
 
   return (
@@ -12,4 +13,4 @@ export const Card = forwardRef((props: CardProps, ref: ForwardedRef<HTMLDivEleme
       {children}
     </div>
   );
-});
+}));

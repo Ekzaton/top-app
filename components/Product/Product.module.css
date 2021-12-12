@@ -154,16 +154,10 @@
 	margin-left: 20px;
 }
 
-.opened {
-	max-height: unset;
-	padding: 30px;
-}
-
-.closed {
+.reviews {
 	overflow: hidden;
 
-	max-height: 0;
-	padding: 0;
+	padding: 30px;
 }
 
 @media screen and (max-width: 1320px) {

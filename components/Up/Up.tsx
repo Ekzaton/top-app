@@ -1,17 +1,18 @@
 import {motion, useAnimation} from "framer-motion";
+import {useEffect} from "react";
 
 import { useScrollY } from "../../hooks/useScrollY";
 
+import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
+
 import styles from "./Up.module.css";
-import UpIcon from "./up.svg";
-import {useEffect} from "react";
 
 export function Up(): JSX.Element {
   const y = useScrollY();
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start({opacity: y / document.body.scrollHeight});
+    controls.set({opacity: y / document.body.scrollHeight}, );
   }, [controls, y]);
 
   const scrollToTop = () => {
@@ -22,8 +23,8 @@ export function Up(): JSX.Element {
   };
 
   return (
-    <motion.button className={styles.up} onClick={scrollToTop} animate={controls} initial={{opacity: 0}}>
-      <UpIcon/>
-    </motion.button>
+    <motion.div className={styles.up} animate={controls} initial={{opacity: 0}}>
+      <ButtonIcon appearance="primary" icon="up" onClick={scrollToTop} />
+    </motion.div>
   );
 }

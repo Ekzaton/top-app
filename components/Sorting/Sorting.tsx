@@ -9,18 +9,20 @@ export function Sorting(props: SortingProps): JSX.Element {
 
   return (
     <div className={cn(styles.sorting, className)} {...otherProps}>
-      <span
+      <button
           className={cn({[styles.active]: sorting === SortingEnum.Rating})}
-          onClick={() => setSorting(SortingEnum.Rating)}>
+          onClick={() => setSorting(SortingEnum.Rating)}
+      >
         <SortingIcon className={styles.icon}/>
         По рейтингу
-      </span>
-      <span
+      </button>
+      <button
           className={cn({[styles.active]: sorting === SortingEnum.Price})}
-          onClick={() => setSorting(SortingEnum.Price)}>
+          onClick={() => setSorting(SortingEnum.Price)}
+      >
         <SortingIcon className={styles.icon}/>
         По цене
-      </span>
+      </button>
     </div>
   );
 }

@@ -4,7 +4,7 @@
 	gap: 40px;
 }
 
-.sorting span {
+.sorting button {
 	display: grid;
 	grid-template-columns: 20px 1fr;
 
@@ -12,9 +12,15 @@
 	gap: 8px;
 
 	cursor: pointer;
+
+	border: none;
+	background: none;
+
+	font-size: 16px;
+	line-height: 22px;
 }
 
-.sorting span:not(.active) {
+.sorting button:not(.active) {
 	grid-template-columns: 1fr;
 }
 

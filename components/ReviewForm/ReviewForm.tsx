@@ -16,7 +16,7 @@ import styles from "./ReviewForm.module.css";
 import {ReviewFormProps} from "./ReviewForm.props";
 
 export function ReviewForm(props: ReviewFormProps): JSX.Element {
-  const {productId, className, ...otherProps} = props;
+  const {productId, isOpened, className, ...otherProps} = props;
   const {register, control, handleSubmit, formState: {errors}, reset} = useForm<IReviewForm>();
 
   const [success, setSuccess] = useState<boolean>(false);
@@ -24,7 +24,7 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
 
   const onSubmit = async (formData: IReviewForm) => {
     try {
-      const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, {...formData, productId});
+      const {data} = await axios.post<IReviewSentResponse>(API.review.createDemo, {...formData, productId});
       if (data.message) {
         setSuccess(true);
         reset();
@@ -32,7 +32,7 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
         setError("Что-то пошло не так");
       }
     } catch (e) {
-      setError(e.message);
+      if (e instanceof Error) setError(e.message);
     }
   };
 
@@ -43,12 +43,14 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
             placeholder="Имя"
             error={errors.name}
             {...register("name", {required: {value: true, message: "Заполните имя"}})}
+            tabIndex={isOpened ? 0 : -1}
         />
         <Input
             className={styles.title}
             placeholder="Заголовок отзыва"
             error={errors.title}
             {...register("title", {required: {value: true, message: "Заполните заголовок"}})}
+            tabIndex={isOpened ? 0 : -1}
         />
         <div className={styles.rating}>
           <span>Оценка:</span>
@@ -62,7 +64,9 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
                 rating={field.value}
                 setRating={field.onChange}
                 isEditable
-                error={errors.rating}/>
+                error={errors.rating}
+                tabIndex={isOpened ? 0 : -1}
+              />
             }
           />
         </div>
@@ -73,7 +77,7 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
           {...register("description", {required: {value: true, message: "Заполните текст отзыва"}})}
         />
         <div className={styles.submit}>
-          <Button appearance="primary">Отправить</Button>
+          <Button appearance="primary" tabIndex={isOpened ? 0 : -1}>Отправить</Button>
           <span>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
         </div>
       </div>

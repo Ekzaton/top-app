@@ -4,6 +4,10 @@
 	gap: 40px;
 }
 
+.sortingName {
+	display: none;
+}
+
 .sorting button {
 	display: grid;
 	grid-template-columns: 20px 1fr;

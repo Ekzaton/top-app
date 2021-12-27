@@ -42,6 +42,7 @@ export function Search(props: SearchProps): JSX.Element {
         className={styles.button}
         appearance="primary"
         onClick={goToSearch}
+        aria-label="Искать по сайту"
       >
         <GlassIcon/>
       </Button>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
+import Head from "next/head";
 
 import {API} from "../../api/api";
 import {firstLevelMenu} from "../../helpers/helpers";
@@ -20,7 +21,16 @@ function TopPage(props: TopPageProps): JSX.Element {
   const {firstCategory, page, products} = props;
 
   return (
-    <TopPageComponent firstCategory={firstCategory} page={page} products={products}/>
+      <>
+        <Head>
+          <title>{page.metaTitle}</title>
+          <meta name="description" content={page.metaDescription}/>
+          <meta property="og:title" content={page.metaTitle}/>
+          <meta property="og:description" content={page.metaDescription}/>
+          <meta property="og:type" content="article"/>
+        </Head>
+        <TopPageComponent firstCategory={firstCategory} page={page} products={products}/>
+      </>
   );
 }
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 import {GetStaticProps} from "next";
-import React from "react";
 
 import {API} from "../api/api";
 import {withLayout} from "../layout/Layout";

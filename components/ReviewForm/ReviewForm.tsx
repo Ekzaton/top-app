@@ -77,7 +77,7 @@ export function ReviewForm(props: ReviewFormProps): JSX.Element {
           placeholder="Текст отзыва"
           error={errors.description}
           {...register("description", {required: {value: true, message: "Заполните текст отзыва"}})}
-          aria-label='Текст отзыва'
+          aria-label="Текст отзыва"
           aria-invalid={!!errors.description}
         />
         <div className={styles.submit}>

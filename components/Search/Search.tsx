@@ -15,7 +15,7 @@ export function Search(props: SearchProps): JSX.Element {
   const [search, setSearch] = useState<string>('');
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if(e.key === 'Enter') {
+    if(e.key === "Enter") {
       goToSearch();
     }
   };

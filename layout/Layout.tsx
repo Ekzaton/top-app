@@ -19,7 +19,7 @@ function Layout(props: LayoutProps): JSX.Element {
   const bodyRef = useRef<HTMLDivElement>(null);
 
   const skipContentAction = (e: KeyboardEvent) => {
-    if (e.code == 'Space' || e.code == 'Enter') {
+    if (e.code === "Space" || e.code === "Enter") {
       e.preventDefault();
       bodyRef.current?.focus();
     }

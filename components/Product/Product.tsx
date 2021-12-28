@@ -80,7 +80,7 @@ export const Product = motion(forwardRef((props: ProductProps, ref: ForwardedRef
             onClick={scrollToReview}
           >
             {product.reviewCount}
-            {' '}
+            {" "}
             {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
           </a>
         </div>

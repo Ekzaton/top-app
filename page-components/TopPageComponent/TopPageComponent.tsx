@@ -28,8 +28,8 @@ export function TopPageComponent(props: TopPageComponentsProps): JSX.Element {
         </Tag>}
         <Sorting sorting={sorting} setSorting={setSorting}/>
       </div>
-      <div>
-        {sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p} layout/>)}
+      <div role="list">
+        {sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p} layout role="listitem"/>)}
       </div>
       <div className={styles.hhTitle}>
         <Heading size="h2">Вакансии - {page.category}</Heading>

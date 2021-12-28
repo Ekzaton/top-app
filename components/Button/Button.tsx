@@ -1,12 +1,12 @@
 import cn from "classnames";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 import ArrowIcon from "./arrow.svg";
 import styles from "./Button.module.css";
 import {ButtonProps} from "./Button.props";
 
 export function Button(props: ButtonProps): JSX.Element {
-  const {appearance, arrow = 'none', className, children, ...otherProps} = props;
+  const {appearance, arrow = "none", className, children, ...otherProps} = props;
 
   return (
     <motion.button

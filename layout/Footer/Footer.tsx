@@ -9,7 +9,7 @@ export function Footer(props: FooterProps): JSX.Element {
 
   return (
     <footer className={cn(className, styles.footer)} { ...otherProps}>
-      <div>OwlTop © 2020 - {format(new Date, 'yyyy')} Все права защищены</div>
+      <div>OwlTop © 2020 - {format(new Date, "yyyy")} Все права защищены</div>
       <a href="#">Пользовательское соглашение</a>
       <a href="#">Политика конфиденциальности</a>
     </footer>

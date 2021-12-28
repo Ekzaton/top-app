@@ -9,7 +9,7 @@ export const Card = motion(forwardRef((props: CardProps, ref: ForwardedRef<HTMLD
   const {color = "white", children, className, ...otherProps} = props;
 
   return (
-    <div ref={ref} className={cn(styles.card, className, {[styles.blue]: color === 'blue'})} {...otherProps}>
+    <div ref={ref} className={cn(styles.card, className, {[styles.blue]: color === "blue"})} {...otherProps}>
       {children}
     </div>
   );

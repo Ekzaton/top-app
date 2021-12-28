@@ -1,6 +1,6 @@
 import axios from "axios";
 import {GetStaticProps} from "next";
-import React, {useState} from "react";
+import {useState} from "react";
 
 import {API} from "../api/api";
 import {Button, Heading, Input, Paragraph, Rating, Tag, Textarea} from "../components";

@@ -20,7 +20,7 @@ export function Review(props: ReviewProps): JSX.Element {
         <span>{title}</span>
       </div>
       <div className={styles.date}>
-        {format(new Date(createdAt), 'dd MMM yyyy', {locale: ru})}
+        {format(new Date(createdAt), "dd MMM yyyy", {locale: ru})}
       </div>
       <div className={styles.rating}>
         <Rating rating={rating}/>

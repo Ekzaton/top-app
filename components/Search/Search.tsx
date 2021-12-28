@@ -35,7 +35,7 @@ export function Search(props: SearchProps): JSX.Element {
         className={styles.input}
         placeholder="Поиск..."
         value={search}
-        onChange={(e) =>setSearch(e.target.value) }
+        onChange={(e) =>setSearch(e.target.value)}
         onKeyDown={handleKeyDown}
       />
       <Button

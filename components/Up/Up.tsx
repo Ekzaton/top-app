@@ -1,9 +1,9 @@
 import {motion, useAnimation} from "framer-motion";
 import {useEffect} from "react";
 
-import { useScrollY } from "../../hooks/useScrollY";
+import {useScrollY} from "../../hooks/useScrollY";
 
-import { ButtonIcon } from "../ButtonIcon/ButtonIcon";
+import {ButtonIcon} from "../ButtonIcon/ButtonIcon";
 
 import styles from "./Up.module.css";
 

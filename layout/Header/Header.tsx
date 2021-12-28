@@ -1,6 +1,6 @@
 import cn from "classnames";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
+import {motion, useReducedMotion} from "framer-motion";
+import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 
 import {ButtonIcon} from "../../components/ButtonIcon/ButtonIcon";
@@ -19,13 +19,15 @@ export function Header(props: HeaderProps): JSX.Element {
 
   const router = useRouter();
 
+  const shouldReduceMotion = useReducedMotion();
+
   useEffect(() => {
     setIsOpened(false);
   }, [router]);
 
   const variants = {
     opened: {
-      opacity: 1,
+      opacity: shouldReduceMotion ? 1 : 0,
       x: 0,
       transition: {
         stiffness: 20
@@ -38,7 +40,7 @@ export function Header(props: HeaderProps): JSX.Element {
   };
 
   return (
-    <header className={cn(className, styles.header)} { ...otherProps}>
+    <header className={cn(className, styles.header)} {...otherProps}>
       <Logo/>
       <ButtonIcon appearance="white" icon="menu" onClick={() => setIsOpened(true)}/>
       <motion.div

@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { motion } from "framer-motion";
+import {motion, useReducedMotion} from "framer-motion";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {KeyboardEvent, useContext, useState} from "react";
@@ -16,6 +16,8 @@ export function Menu(): JSX.Element {
   const [announce, setAnnounce] = useState<"closed" | "opened" | undefined>();
 
   const router = useRouter();
+
+  const shouldReduceMotion = useReducedMotion();
 
   const openSecondLevel = (secondCategory: string) => {
     setMenu && setMenu(menu.map(m => {
@@ -38,7 +40,7 @@ export function Menu(): JSX.Element {
   const variants = {
     visible: {
       marginBottom: 20,
-      transition: {
+      transition: shouldReduceMotion ? {} : {
         when: "beforeChildren",
         staggerChildren: 0.1,
       }
@@ -55,7 +57,7 @@ export function Menu(): JSX.Element {
     },
     hidden: {
       height: 0,
-      opacity: 0,
+      opacity: shouldReduceMotion ? 1 : 0,
     },
   };
 

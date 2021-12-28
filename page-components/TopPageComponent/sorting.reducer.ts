@@ -2,7 +2,7 @@ import {SortingEnum} from "../../components/Sorting/Sorting.props";
 import {ProductModel} from "../../interfaces/product.interface";
 
 export type SortingAction =
-    {type: SortingEnum.Price } |
+    {type: SortingEnum.Price} |
     {type: SortingEnum.Rating} |
     {type: "reset", initialState: ProductModel[]};
 

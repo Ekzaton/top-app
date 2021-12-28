@@ -13,7 +13,7 @@ export function Sidebar(props: SidebarProps): JSX.Element {
   const {className, ...otherProps} = props;
 
   return (
-    <div className={cn(className, styles.sidebar)} { ...otherProps}>
+    <div className={cn(className, styles.sidebar)} {...otherProps}>
       <Logo className={styles.logo}/>
       <Search/>
       <Menu/>

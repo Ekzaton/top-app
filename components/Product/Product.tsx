@@ -17,7 +17,7 @@ import styles from "./Product.module.css";
 import {ProductProps} from "./Product.props";
 
 export const Product = motion(forwardRef((props: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
-  const { className, product, ...otherProps} = props;
+  const {className, product, ...otherProps} = props;
 
   const reviewRef = useRef<HTMLDivElement>(null);
 

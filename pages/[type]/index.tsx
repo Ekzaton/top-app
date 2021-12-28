@@ -28,7 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetStaticPropsContext) => {
   if (!params) {
     return {
       notFound: true
@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
     };
   }
 
-  const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
+  const {data: menu} = await axios.post<MenuItem[]>(API.topPage.find, {
     firstCategory: firstCategoryItem.id
   });
 

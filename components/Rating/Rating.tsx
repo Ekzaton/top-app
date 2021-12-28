@@ -33,6 +33,12 @@ export const Rating= forwardRef((props: RatingProps, ref: ForwardedRef<HTMLDivEl
         onClick={() => changeValue(i + 1)}
         onKeyDown={handleKey}
         tabIndex={computeFocus(rating, i)}
+        role={isEditable ? "slider" : undefined}
+        aria-label={isEditable ? 'Укажите рейтинг' : ("рейтинг " + rating)}
+        aria-invalid={!!error}
+        aria-valuenow={rating}
+        aria-valuemax={5}
+        aria-valuemin={1}
       >
         <StarIcon/>
       </span>
@@ -74,7 +80,7 @@ export const Rating= forwardRef((props: RatingProps, ref: ForwardedRef<HTMLDivEl
   return (
       <div ref={ref} className={cn(styles.ratingWrapper, {[styles.error]: error})} {...otherProps}>
         {ratingArray.map((r, i) => <span key={i}>{r}</span>)}
-        {error && <span className={styles.errorMessage}>{error.message}</span>}
+        {error && <span className={styles.errorMessage} role="alert">{error.message}</span>}
       </div>
   );
 });

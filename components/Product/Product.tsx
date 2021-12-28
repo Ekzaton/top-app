@@ -113,6 +113,7 @@ export const Product = motion(forwardRef((props: ProductProps, ref: ForwardedRef
             appearance="ghost"
             arrow={isReviewOpened ? "down" : "right"}
             onClick={() => setIsReviewOpened(!isReviewOpened)}
+            aria-expanded={isReviewOpened}
           >
             Читать отзывы
           </Button>

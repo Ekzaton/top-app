@@ -12,6 +12,7 @@ import styles from "./Menu.module.css";
 
 export function Menu(): JSX.Element {
   const {menu, setMenu, firstCategory} = useContext(AppContext);
+
   const router = useRouter();
 
   const openSecondLevel = (secondCategory: string) => {

@@ -13,6 +13,7 @@ import {LayoutProps} from "./Layout.props";
 
 function Layout(props: LayoutProps): JSX.Element {
   const {children} = props;
+
   const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] = useState<boolean>(false);
 
   const bodyRef = useRef<HTMLDivElement>(null);

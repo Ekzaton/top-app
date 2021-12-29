@@ -1,5 +1,6 @@
 import axios from "axios";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
+import { ParsedUrlQuery } from "querystring";
 
 import {API} from "../../api/api";
 import {withLayout} from "../../layout/Layout";

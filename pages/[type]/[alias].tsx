@@ -1,6 +1,7 @@
 import axios from "axios";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 import Head from "next/head";
+import { ParsedUrlQuery } from "querystring";
 
 import {API} from "../../api/api";
 import {firstLevelMenu} from "../../helpers/helpers";

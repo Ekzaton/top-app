@@ -18,7 +18,7 @@ export default function MyApp(props: AppProps): JSX.Element {
     <>
       <Head>
         <title>My Top - наш лучший топ</title>
-        <link rel="icon" href={"/favicon.ico"} />
+        <link rel="icon" href={"/favicon.ico"}/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link rel="preconnect" href="https://mc.yandex.ru"/>
@@ -27,7 +27,7 @@ export default function MyApp(props: AppProps): JSX.Element {
         <meta property="og:locale" content="ru_RU"/>
       </Head>
       <YMInitializer accounts={[]} options={{webvisor: true, defer: true}} version="2"/>
-      <Component {...pageProps} />
+      <Component {...pageProps}/>
     </>
   );
 }

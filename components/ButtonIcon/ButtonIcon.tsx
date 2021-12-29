@@ -9,7 +9,7 @@ export function ButtonIcon(props: ButtonIconProps): JSX.Element {
 
   return (
     <button className={cn(styles.button, className, styles[appearance])} {...otherProps}>
-      <IconComp />
+      <IconComp/>
     </button>
   );
 }

@@ -22,7 +22,7 @@ export function HHData(props: HHDataProps): JSX.Element {
             <div className={styles.salaryValue}>{priceRu(juniorSalary)}</div>
             <div className={styles.rate}>
               <RateIcon className={styles.filled}/>
-              <RateIcon />
+              <RateIcon/>
               <RateIcon/>
             </div>
           </div>

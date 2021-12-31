@@ -27,14 +27,14 @@ export function Header(props: HeaderProps): JSX.Element {
 
   const variants = {
     opened: {
-      opacity: shouldReduceMotion ? 1 : 0,
+      opacity: 1,
       x: 0,
       transition: {
         stiffness: 20
       }
     },
     closed: {
-      opacity: 0,
+      opacity: shouldReduceMotion ? 1 : 0,
       x: "100%",
     }
   };
